@@ -1,0 +1,94 @@
+.applicationForm {
+    background: #F29F05;
+    color: white;
+    padding: 0 5px 15;
+    text-align: center;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+    border-bottom: 5px solid #0E2240;
+    margin-bottom: 5px;
+}
+.formGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.formGridPart{
+    display: grid;
+    grid-template-columns: .2fr 1fr;
+}
+
+form {
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 19px;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* TAMAÑO LETRA: nombre, apellido, e-mail, etc ----- */
+label {
+    margin-left: 8px;
+    font-size: 30px;
+    padding: 5px;
+    display: block;
+    width: 100%;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 95%;
+    padding: 1%;
+    margin-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Caveat', cursive;
+}
+
+input:focus {
+    background-color: #dedede;
+}
+.form2Buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1%;
+    margin: 1%;
+
+}
+
+.formButton {
+width: 50%;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: #0E2240;
+    color: #fff;
+    cursor: pointer;
+    margin:auto;
+    border: none;
+    padding: 1%;
+    border-radius: 20px 10px 20px 10px;
+    /* SOMBRA BOTON*/
+    -webkit-box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+}
+
+.formButton:hover {
+    background-color: #EF3242;
+}
+
+form h3{
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+}
+.createButton{
+    width: 30%;
+}
