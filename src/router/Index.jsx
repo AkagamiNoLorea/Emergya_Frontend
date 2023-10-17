@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import ListaUsuarios from "../pages/ListaUsuarios";
-import CrearUsuario from "../pages/CrearUsuario";
-import EditarUsuario from "../pages/EditarUsuario";
-import BorrarUsuario from "../pages/BorrarUsuario";
-import ListaOficinas from "../pages/ListaOficinas";
-import CrearOficinas from "../pages/CrearOficinas";
-import EditarOficinas from "../pages/EditarOficinas";
-import BorrarOficinas from "../pages/BorrarOficinas";
-import EditListaPuestos from "../pages/EditListaPuestos";
+import ListaUsuarios from "../components/usuario/ListaUsuarios";
+import CrearUsuario from "../components/usuario/CrearUsuario";
+import EditarUsuario from "..../components/usuario/EditarUsuario";
+import BorrarUsuario from "../components/usuario/BorrarUsuario";
+import ListaOficinas from "../components/oficinas/ListaOficinas";
+import CrearOficinas from "../components/oficinas/CrearOficinas";
+import EditarOficinas from "../components/oficinas/EditarOficinas";
+import BorrarOficinas from "../components/oficinas/BorrarOficinas";
+import EditListaPuestos from "../components/puestos/EditListaPuestos";
+import ElegirOficina from "../components/puestos/ElegirOficina"
 import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
+import Layout from "../components/layout/Layout";
 
 export const router = createBrowserRouter([
     {
