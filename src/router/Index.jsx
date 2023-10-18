@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import ListaUsuarios from "../pages/ListaUsuarios";
+import ListaUsuarios from "../components/usuario";
 import CrearUsuario from "../pages/CrearUsuario";
 import EditarUsuario from "../pages/EditarUsuario";
 import BorrarUsuario from "../pages/BorrarUsuario";
@@ -12,6 +11,8 @@ import EditListaPuestos from "../pages/EditListaPuestos";
 import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
+import Layout from "../layout/Layout";
+import ElegirOficina from "../components/oficina"
 
 export const router = createBrowserRouter([
     {
