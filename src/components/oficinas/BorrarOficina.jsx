@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const url = "https://portfolioback-production-00e6.up.railway.app/api/portfolio";
+const url = "http://localhost:8086/api/v1/oficina";
 
 const BorrarOficina = () => {
   const [oficina, setOficina] = useState({});
