@@ -2,7 +2,6 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Icon } from '@iconify/react';
-import fondo from '../assets/img/fondo.jpg'
 
 const url = "http://localhost:8086/api/v1/oficina"
 
@@ -37,7 +36,7 @@ const EditarUsuario = () => {
   return (
     <>
       {<div className="contenedor-con-fondo">
-        <img className='imagenfondo' src={fondo} />
+        <img className='imagenfondo' />
       </div>}
       <div className="contenedor-form"><h2>Editar Repositorio</h2>
         <div className="contenedor-form1">

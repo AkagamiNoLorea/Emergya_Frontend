@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const url = "https://portfolioback-production-00e6.up.railway.app/api/portfolio";
+const url = "http://localhost:8086/api/v1/oficina";
 
 const BorrarOficina = () => {
   const [oficina, setOficina] = useState({});
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const { portfolioId } = useParams();
+  const { oficinaId } = useParams();
 
   useEffect(() => {
     const fetchOficina = async () => {
       try {
-        const response = await axios.get(`${url}/${oficiinaId}`);
+        const response = await axios.get(`${url}/${oficinaId}`);
         setOficina(response.data);
       } catch (error) {
         setError(error.message);
@@ -30,7 +30,7 @@ const BorrarOficina = () => {
 
   const handleDeleteOficina = async () => {
     try {
-      await axios.delete(`${url}/${ofinicaId}`);
+      await axios.delete(`${url}/${oficinaId}`);
       navigate("/private/listaoficinas");
     } catch (error) {
       setError(error.message);

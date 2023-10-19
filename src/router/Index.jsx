@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import ListaUsuarios from "../components/usuario/ListaUsuarios";
 import CrearUsuario from "../components/usuario/CrearUsuario";
 import EditarUsuario from "../components/usuario/EditarUsuario";
-import BorrarUsuario from "../components/usuario/BorrarUsuario";
 import ListaOficinas from "../components/oficinas/ListaOficinas";
 import CrearOficinas from "../components/oficinas/CrearOficina";
 import EditarOficinas from "../components/oficinas/EditarOficina";
@@ -42,10 +41,6 @@ export const router = createBrowserRouter([
             {
                 path: "/private/editaruser/:userId",
                 element: <EditarUsuario />
-            },
-            {
-                path: "/private/borraruser/:userId",
-                element: <BorrarUsuario />
             },
             {
                 path: "/private/listaoficinas",
