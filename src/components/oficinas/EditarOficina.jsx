@@ -20,7 +20,7 @@ const EditarOficina = () => {
         try {
           const response = await axios.get(`${url}/${oficinaId}`);
           setOficina(response.data);
-          setNombre(response.data.Nombreoficina);
+          setNombreoficina(response.data.Nombreoficina);
           setPuesto(response.data.Puesto);
           setPlanodistribucion(response.data.Planodistribucion);
           setDiasantelacion(response.data.Diasantelacion);
