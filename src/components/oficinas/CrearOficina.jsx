@@ -45,8 +45,8 @@ const CrearOficina = () => {
                                 <input type="text" value={Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}></input>
                             </div>
                             <div className='form2Buttons'>
-              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i> Guardar canvios</button>
-              <button className='formButton' type="button"><i className="fa-solid fa-xmark"></i> Cancelar</button>
+              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
+              <button className='formButton' type="button"><i className="fa-solid fa-xmark"></i></button>
             </div>
                     </div>
                 </div>
