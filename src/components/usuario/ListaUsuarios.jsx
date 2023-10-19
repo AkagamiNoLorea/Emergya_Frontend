@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { Icon } from '@iconify/react';
 
-const url = "http://localhost:8086/api/v1/oficina"
+const url = "http://localhost:8086/api/v1/Usuariopuesto"
 const ListaUsuario = () => {
 
     const [characters, setCharacters] = useState([])

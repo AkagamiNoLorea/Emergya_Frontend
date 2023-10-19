@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/oficina"
+const url = "http://localhost:8086/api/v1/usuario"
 
 const CrearUsuario = () => {
 
@@ -23,7 +23,7 @@ const CrearUsuario = () => {
         <>
             {<div className="contenedor-con-fondo">
             </div>}
-            <h2>Crear Repositorio</h2>
+            <h2>Puestos estado</h2>
             <div className="contenedor-form">
                 <div className="contenedor-form1">
                     <div className="formulario">

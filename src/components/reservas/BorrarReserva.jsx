@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const url = "http://localhost:8086/api/v1/oficina";
+const url = "http://localhost:8086/api/v1/usuario";
 
 const BorrarReserva = () => {
   const [oficina, setOficina] = useState({});

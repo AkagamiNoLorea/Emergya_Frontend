@@ -25,7 +25,7 @@ const CrearOficina = () => {
             <form onSubmit={guardar}>
             <div className="applicationForm">
             <h2>Crear Repositorio</h2>
-          </div>
+        </div>
             <div className="contenedor-form">
                     <div className="formTable">
                             <div>

@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/oficina"
+const url = "http://localhost:8086/api/v1/Usuariopuesto"
 
 const CrearUsuario = () => {
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CardOficina from "./CardOficina";
 
 
-const url = "https://portfolioback-production-00e6.up.railway.app/api/portfolio"
+const url = "http://localhost:8086/api/v1/oficina"
 const ListaOficinas = () => {
 
     const [oficinas, setOficinas] = useState([]);
