@@ -34,12 +34,7 @@ const ListaUsuario = () => {
                     <div className='contenedor-api1' key={character.id}>
                         <div className='contenedor-api2'>
                             <div className='card-api'>
-                                <h3>{character.Estado}</h3>
-                                <div className='image-contenedor'>
-                                <img src={character.Oficina} alt="" />
-                                </div>
-                                <p>{character.Puesto}</p>
-                                <p>{character.Usuario}</p>
+                                <h3>{character.Nombre}</h3>
                                 <NavLink to={`/editar/${character.id}`}><button className='boton-edit' ><Icon icon="bxs:edit" color="blue" /></button></NavLink>
                                 <button className="boton-borrar" onClick={() => handleDelete(character.id)}><Icon icon="bi:trash-fill" color="maroon" /></button>
                             </div>

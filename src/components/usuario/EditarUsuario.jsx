@@ -7,7 +7,7 @@ import fondo from '../assets/img/fondo.jpg'
 
 const url = "http://localhost:8086/api/v1/oficina"
 
-const EditarFormulario = () => {
+const EditarUsuario= () => {
 
     const [Estado, setEstado] = useState('')
     const [Oficina, setOficina] = useState('')
@@ -72,4 +72,4 @@ const EditarFormulario = () => {
     )
 }
 
-export default EditarFormulario
+export default EditarUsuario
