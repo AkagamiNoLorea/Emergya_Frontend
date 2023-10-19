@@ -13,15 +13,13 @@ export default function CardOficina(props) {
     return (
         <>
             <div className="card">
-                <div className="card-container">
                     <div className="card-text">
-                        <h2>{oficina.nombre}</h2>
+                        <h2>{oficina.nombreoficina}</h2>
                     </div>
                     <div className="card-buttons">
-                        <button onClick={() => props.editOficina(oficina)}><i className="fa-solid fa-pen"></i> Editar </button>
-                        <button onClick={() => props.deleteOficina(oficina)}><i className="fa-solid fa-xmark"></i> Eliminar </button>
+                        <button onClick={() => props.editOficina(oficina)}><i className="fa-solid fa-pen"></i> </button>
+                        <button onClick={() => props.deleteOficina(oficina)}><i className="fa-solid fa-xmark"></i> </button>
                     </div>
-                </div>
             </div>
         </>
     )

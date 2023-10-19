@@ -39,9 +39,10 @@ const ListaOficinas = () => {
 
     return (
         <>
+        <div className="titulopagina"><h1>Lista de oficinas</h1>
             <div className="createButton">
-                <button className="formButton" onClick={() => navigate("/create")}><i className="fa-solid fa-plus"></i> Crear Proyecto</button>
-            </div>
+                <button onClick={() => navigate("/private/crearoficinas")}> Crear Oficina</button>
+            </div></div>
             <div className="box">
                 {
                     cards

@@ -7,16 +7,10 @@
   
 const EditarOficina = () => {  
     const [oficina, setOficina] = useState({});
-    const [nombre, setNombre] = useState('')
-    const [descripcion, setDescripcion] = useState('')
-    const [img, setImg] = useState('')
-    const [htmlValue, setHtmlValue] = useState('')
-    const [cssValue, setCssValue] = useState('')
-    const [jsValue, setJsValue] = useState('')
-    const [javaValue, setJavaValue] = useState('')
-    const [frameworksAndLibraries, setFrameworksAndLibraries] = useState('')
-    const [enlace, setEnlace] = useState('')
-    const [despliegue, setDespliegue] = useState('')
+    const [Nombreoficina, setNombreoficina] = useState('')
+    const [Puesto, setPuesto] = useState('')
+    const [Planodistribucion, setPlanodistribucion] = useState('')
+    const [Diasantelacion, setDiasantelacion] = useState('')
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { oficinaId } = useParams();
@@ -26,16 +20,10 @@ const EditarOficina = () => {
         try {
           const response = await axios.get(`${url}/${oficinaId}`);
           setOficina(response.data);
-          setNombre(response.data.nombre);
-          setDescripcion(response.data.descripcion);
-          setImg(response.data.img);
-          setHtmlValue(response.data.htmlValue);
-          setCssValue(response.data.cssValue);
-          setJsValue(response.data.jsValue);
-          setJavaValue(response.data.javaValue);
-          setFrameworksAndLibraries(response.data.frameworksAndLibraries);
-          setEnlace(response.data.enlace);
-          setDespliegue(response.data.despliegue);
+          setNombre(response.data.Nombreoficina);
+          setPuesto(response.data.Puesto);
+          setPlanodistribucion(response.data.Planodistribucion);
+          setDiasantelacion(response.data.Diasantelacion);
         } catch (error) {
           setError(error.message);
         }
@@ -51,16 +39,10 @@ const EditarOficina = () => {
       e.preventDefault()
       await axios.put(`${url}/${oficinaId}`, {
         oficina: oficina,
-        nombre: nombre,
-        descripcion: descripcion,
-        img: img,
-        htmlValue: htmlValue,
-        cssValue: cssValue,
-        jsValue: jsValue,
-        javaValue: javaValue,
-        frameworksAndLibraries: frameworksAndLibraries,
-        enlace: enlace,
-        despliegue: despliegue
+        Nombreoficina: Nombreoficina,
+        Puesto: Puesto,
+        Planodistribucion: Planodistribucion,
+        Diasantelacion: Diasantelacion
       })
       navigate("/private/listaoficinas")
     }
@@ -78,49 +60,24 @@ const EditarOficina = () => {
           </div>
           <div className="formTable">
             <div>
-              <label>Nombre</label>
-              <input placeholder="Ingrese el titulo..." type="text" defaultValue={oficina.nombre} onChange={(e) => setNombre(e.target.value)}/>
+              <label>Nombre de la oficina:</label>
+              <input type="text" defaultValue={oficina.Nombreoficina} onChange={(e) => setNombreoficina(e.target.value)}/>
             </div>
             <div>
-              <label>Descripcion</label>
-              <input placeholder="Describe tu proyecto..." type="text" defaultValue={oficina.descripcion} onChange={(e) => setDescripcion(e.target.value)}/>
+              <label>Numero de puestos máximos:</label>
+              <input type="number" defaultValue={oficina.Puesto} onChange={(e) => setPuesto(e.target.value)}/>
             </div>
             <div>
-              <label>Imagen</label>
-              <input placeholder="Ingrese url de imagen" type="text" value={oficina.img} onChange={(e) => setImg(e.target.value)} />
+              <label>Plano de distribución</label>
+              <input type="text" value={oficina.Planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
             </div>
             <div>
-              <label>Lenguajes</label>
-              <div className='formGrid'>
-                <div className='formGridPart'>
-                  <label>HTML</label>
-                  <input placeholder="Ingrese solo valor numerico" type="text" defaultValue={oficina.htmlValue} onChange={(e) => setHtmlValue(e.target.value)} />
-                  <label>CSS</label>
-                  <input placeholder="Ingrese solo valor numerico" type="text" defaultValue={oficina.cssValue} onChange={(e) => setCssValue(e.target.value)} />
-                </div>
-                <div className='formGridPart'>
-                  <label>Javascript</label>
-                  <input placeholder="Ingrese solo valor numerico" type="text" defaultValue={oficina.jsValue} onChange={(e) => setJsValue(e.target.value)} />
-                  <label>Java</label>
-                  <input placeholder="Ingrese solo valor numerico" type="text" defaultValue={oficina.javaValue} onChange={(e) => setJavaValue(e.target.value)} />
-                </div>
-              </div>
-              <div>
-                <label>Frameworks y librerias</label>
-                <input placeholder="Describe tu proyecto..." type="text" defaultValue={oficina.frameworksAndLibraries} onChange={(e) => setFrameworksAndLibraries(e.target.value)} />
-              </div>
-            </div>
-            <div>
-              <label>Enlace a GitHub</label>
-              <input placeholder="Ingrese url" type="text" defaultValue={oficina.enlace} onChange={(e) => setEnlace(e.target.value)}/>
-            </div>
-            <div>
-              <label>Despliegue</label>
-              <input placeholder="Ingrese url" type="text" defaultValue={oficina.despliegue} onChange={(e) => setDespliegue(e.target.value)}/>
+                  <label>Días de antelación máximos</label>
+                  <input type="number" defaultValue={oficina.Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)} />
             </div>
             <div className='form2Buttons'>
-              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i> Guardar canvios</button>
-              <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> Cancelar</button>
+              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
+              <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> </button>
             </div>
           </div>
         </form >
