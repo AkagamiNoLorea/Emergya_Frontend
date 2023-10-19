@@ -29,19 +29,19 @@ const CrearOficina = () => {
             <div className="contenedor-form">
                     <div className="formTable">
                             <div>
-                                <label>Titulo:</label>
+                                <label>Nombre de la oficina:</label>
                                 <input type="text" value={Nombreoficina} onChange={(e) => setNombreoficina(e.target.value)} />
                             </div>
                             <div>
-                                <label>Imagen:</label>
+                                <label>Numero de puesto:</label>
                                 <input type="text" value={Puesto} onChange={(e) => setPuesto(e.target.value)} />
                             </div>
                             <div>
-                                <label>Git:</label>
+                                <label>Plano de distribución:</label>
                                 <input type="text" value={Planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
                             </div>
                             <div>
-                                <label>Descripción:</label>
+                                <label>Días de antelación máxima:</label>
                                 <textarea name="" id="" value={Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}>
 
                                 </textarea>
