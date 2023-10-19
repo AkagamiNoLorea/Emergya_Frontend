@@ -42,9 +42,7 @@ const CrearOficina = () => {
                             </div>
                             <div>
                                 <label>Días de antelación máxima:</label>
-                                <textarea name="" id="" value={Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}>
-
-                                </textarea>
+                                <input type="text" value={Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}></input>
                             </div>
                             <div className='form2Buttons'>
               <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i> Guardar canvios</button>

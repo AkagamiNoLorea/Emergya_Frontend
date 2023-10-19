@@ -65,7 +65,7 @@ const EditarOficina = () => {
             </div>
             <div>
               <label>Numero de puestos máximos:</label>
-              <input type="number" defaultValue={oficina.Puesto} onChange={(e) => setPuesto(e.target.value)}/>
+              <input type="text" defaultValue={oficina.Puesto} onChange={(e) => setPuesto(e.target.value)}/>
             </div>
             <div>
               <label>Plano de distribución</label>
@@ -73,7 +73,7 @@ const EditarOficina = () => {
             </div>
             <div>
                   <label>Días de antelación máximos</label>
-                  <input type="number" defaultValue={oficina.Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)} />
+                  <input type="text" defaultValue={oficina.Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)} />
             </div>
             <div className='form2Buttons'>
               <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
