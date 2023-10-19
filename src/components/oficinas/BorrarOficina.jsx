@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import './FormsPortfolio.css'
 
 const url = "https://portfolioback-production-00e6.up.railway.app/api/portfolio";
 

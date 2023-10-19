@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import ListaUsuarios from "../components/usuario/ListaUsuarios";
 import CrearUsuario from "../components/usuario/CrearUsuario";
-import EditarUsuario from "..../components/usuario/EditarUsuario";
+import EditarUsuario from "../components/usuario/EditarUsuario";
 import BorrarUsuario from "../components/usuario/BorrarUsuario";
 import ListaOficinas from "../components/oficinas/ListaOficinas";
-import CrearOficinas from "../components/oficinas/CrearOficinas";
-import EditarOficinas from "../components/oficinas/EditarOficinas";
-import BorrarOficinas from "../components/oficinas/BorrarOficinas";
+import CrearOficinas from "../components/oficinas/CrearOficina";
+import EditarOficinas from "../components/oficinas/EditarOficina";
+import BorrarOficinas from "../components/oficinas/BorrarOficina";
 import EditListaPuestos from "../components/puestos/EditListaPuestos";
 import ElegirOficina from "../components/puestos/ElegirOficina"
 import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
-import Layout from "../components/layout/Layout";
+import Layout from "../layout/Layout";
 
 export const router = createBrowserRouter([
     {
