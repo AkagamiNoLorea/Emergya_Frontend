@@ -1,6 +1,6 @@
 import React from 'react'
 import './navbar.css'
-
+import logo from '../img/logo.png'
 function Navbar () {
 
 
@@ -8,7 +8,7 @@ function Navbar () {
 
     <>
       <div class="navbar">
-        <img src="/Users/encarnasantanahormiga/Desktop/navbar/@latest/src/A76039D5-06FF-40F8-AC27-6B082A9784BC.png"/>
+        <img src={logo} />
         <div class="usuario">
           <a href="usuario">Usuarios</a>
         </div>
