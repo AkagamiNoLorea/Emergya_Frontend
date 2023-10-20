@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const url = "http://localhost:8086/api/v1/oficina";
+const url = "http://localhost:8080/api/v1/oficina";
 
 const BorrarOficina = () => {
   const [oficina, setOficina] = useState({});
@@ -45,9 +45,9 @@ const BorrarOficina = () => {
     <div className="deleteOficinaForm">
       <form>
         <div className="applicationForm">
-          <h2>Eliminar oficina {oficina.nombre} </h2>
+          <h2>Eliminar oficina {oficina.nombreoficina} </h2>
         </div>
-        <h3>¿Estás seguro de que quieres eliminar este proyecto?</h3>
+        <h3>¿Estás seguro de que quieres eliminar esta oficina?</h3>
         <div className='form2Buttons'>
           <button className='formButton' onClick={handleDeleteOficina}><i className="fa-solid fa-check"></i> Eliminar</button>
           <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i>Cancelar</button>

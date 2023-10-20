@@ -28,7 +28,7 @@ const ElegirOficina = () => {
                       <div className='contenedor-api1' key={oficina.id}>
                           <div className='contenedor-api2'>
                               <div className='card-api'>
-                                  <h3>{oficina.NombreOficina}</h3>
+                                  <h3>{oficina.Nombreoficina}</h3>
                                   <NavLink to={`/private/editarpuestos/${oficina.id}`}><button className='boton-edit' ><Icon icon="bxs:edit" color="blue" /></button></NavLink>
                               </div>
                           </div>

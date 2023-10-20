@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
                 element: <BorrarOficinas />
             },
             {
-                path: "/private/elegiroficinas/:oficinaId",
+                path: "/private/elegiroficinas",
                 element: <ElegirOficina />
             },
             {

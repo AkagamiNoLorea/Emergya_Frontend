@@ -3,14 +3,14 @@
   import { useNavigate } from 'react-router-dom';
   import { useParams } from 'react-router-dom';
   
-  const url = "http://localhost:8086/api/v1/oficina"
+  const url = "http://localhost:8080/api/v1/oficina"
   
 const EditarOficina = () => {  
     const [oficina, setOficina] = useState({});
-    const [Nombreoficina, setNombreoficina] = useState('')
-    const [Puesto, setPuesto] = useState('')
-    const [Planodistribucion, setPlanodistribucion] = useState('')
-    const [Diasantelacion, setDiasantelacion] = useState('')
+    const [nombreoficina, setNombreoficina] = useState('')
+    const [puesto, setPuesto] = useState('')
+    const [planodistribucion, setPlanodistribucion] = useState('')
+    const [diasantelacion, setDiasantelacion] = useState('')
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { oficinaId } = useParams();
@@ -20,10 +20,10 @@ const EditarOficina = () => {
         try {
           const response = await axios.get(`${url}/${oficinaId}`);
           setOficina(response.data);
-          setNombreoficina(response.data.Nombreoficina);
-          setPuesto(response.data.Puesto);
-          setPlanodistribucion(response.data.Planodistribucion);
-          setDiasantelacion(response.data.Diasantelacion);
+          setNombreoficina(response.data.nombreoficina);
+          setPuesto(response.data.puesto);
+          setPlanodistribucion(response.data.planodistribucion);
+          setDiasantelacion(response.data.diasantelacion);
         } catch (error) {
           setError(error.message);
         }
@@ -39,10 +39,10 @@ const EditarOficina = () => {
       e.preventDefault()
       await axios.put(`${url}/${oficinaId}`, {
         oficina: oficina,
-        Nombreoficina: Nombreoficina,
-        Puesto: Puesto,
-        Planodistribucion: Planodistribucion,
-        Diasantelacion: Diasantelacion
+        nombreoficina: nombreoficina,
+        puesto: puesto,
+        planodistribucion: planodistribucion,
+        diasantelacion: diasantelacion
       })
       navigate("/private/listaoficinas")
     }
@@ -61,22 +61,22 @@ const EditarOficina = () => {
           <div className="formTable">
             <div>
               <label>Nombre de la oficina:</label>
-              <input type="text" defaultValue={oficina.Nombreoficina} onChange={(e) => setNombreoficina(e.target.value)}/>
+              <input type="text" defaultValue={oficina.nombreoficina} onChange={(e) => setNombreoficina(e.target.value)}/>
             </div>
             <div>
               <label>Numero de puestos máximos:</label>
-              <input type="text" defaultValue={oficina.Puesto} onChange={(e) => setPuesto(e.target.value)}/>
+              <input type="text" defaultValue={oficina.puesto} onChange={(e) => setPuesto(e.target.value)}/>
             </div>
             <div>
-              <label>Plano de distribución</label>
-              <input type="text" value={oficina.Planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
+              <label>Plano de distribución:</label>
+              <input type="text" value={oficina.planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
             </div>
             <div>
-                  <label>Días de antelación máximos</label>
-                  <input type="text" defaultValue={oficina.Diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)} />
+                  <label>Días de antelación máximos:</label>
+                  <input type="text" defaultValue={oficina.diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)} />
             </div>
             <div className='form2Buttons'>
-              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
+              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i> </button>
               <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> </button>
             </div>
           </div>
