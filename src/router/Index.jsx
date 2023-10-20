@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import ListaUsuarios from "../pages/ListaUsuarios";
-import CrearUsuario from "../pages/CrearUsuario";
-import EditarUsuario from "../pages/EditarUsuario";
-import BorrarUsuario from "../pages/BorrarUsuario";
-import ListaOficinas from "../pages/ListaOficinas";
-import CrearOficinas from "../pages/CrearOficinas";
-import EditarOficinas from "../pages/EditarOficinas";
-import BorrarOficinas from "../pages/BorrarOficinas";
-import EditListaPuestos from "../pages/EditListaPuestos";
+import ListaUsuarios from "../components/usuario/ListaUsuarios";
+import CrearUsuario from "../components/usuario/CrearUsuario";
+import EditarUsuario from "../components/usuario/EditarUsuario";
+import ListaOficinas from "../components/oficinas/ListaOficinas";
+import CrearOficinas from "../components/oficinas/CrearOficina";
+import EditarOficinas from "../components/oficinas/EditarOficina";
+import BorrarOficinas from "../components/oficinas/BorrarOficina";
+import EditListaPuestos from "../components/puestos/EditListaPuestos";
+import ElegirOficina from "../components/puestos/ElegirOficina"
 import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
+import Layout from "../layout/Layout";
 
 export const router = createBrowserRouter([
     {
@@ -43,10 +43,6 @@ export const router = createBrowserRouter([
                 element: <EditarUsuario />
             },
             {
-                path: "/private/borraruser/:userId",
-                element: <BorrarUsuario />
-            },
-            {
                 path: "/private/listaoficinas",
                 element: <ListaOficinas />
             },
@@ -63,7 +59,7 @@ export const router = createBrowserRouter([
                 element: <BorrarOficinas />
             },
             {
-                path: "/private/borraroficinas/:oficinaId",
+                path: "/private/elegiroficinas/:oficinaId",
                 element: <ElegirOficina />
             },
             {
