@@ -1,22 +1,21 @@
-import axios from "axios"
+/*import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import '../estilos/Forms.css'
 
-const url = "http://localhost:8080/api/v1/oficina"
+const url = "http://localhost:8080/api/v1/puesto"
 
-const CrearOficina = () => {
+const CrearPuesto = () => {
 
-    const [nombreoficina, setNombreoficina,] = useState('')
-    const [puesto, setPuesto] = useState('')
-    const [planodistribucion, setPlanodistribucion] = useState('')
-    const [diasantelacion, setDiasantelacion] = useState('')
-
+    const [idOficina, setIdOficina,] = useState('')
+    const [numero, setNumero] = useState('')
+    const [disponible, setDisponible] = useState('')
+    const [idEstado, setEstado] = useState('')
     const navigate = useNavigate()
 
     const guardar = async (e) => {
         e.preventDefault()
-        await axios.post(url, { nombreoficina: nombreoficina, puesto: puesto, planodistribucion: planodistribucion, diasantelacion: diasantelacion })
+        await axios.post(url, { numero: numero, disponible: disponible, idEstado: idEstado, idOficina: idOficina })
         navigate("/private/listaoficinas")
     }
     const goBack = () => {
@@ -57,4 +56,4 @@ const CrearOficina = () => {
     )
 }
 
-export default CrearOficina
+export default CrearOficina*/

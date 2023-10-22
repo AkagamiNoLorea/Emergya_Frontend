@@ -3,20 +3,28 @@
     color: white;
     padding: 0 5px 15;
     text-align: center;
-    border-top-left-radius: 19px;
-    border-top-right-radius: 19px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
     border-bottom: 5px solid #0E2240;
     margin-bottom: 5px;
 }
-.formGrid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.card{
+padding: 0.5% 3%;
+text-align: center;
+border-radius: 15px;
+border: 5px solid #0E2240;
+margin: 2% 5%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 }
-.formGridPart{
+.titulopagina{
+    margin:2%;
+    text-align: center;
     display: grid;
-    grid-template-columns: .2fr 1fr;
+    grid-template-columns: 2fr 0.5fr;
 }
-
 form {
     background-color: white;
     margin: 0 auto;
@@ -27,12 +35,13 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    border: solid 5px #0E2240;
 }
 
 /* TAMAÑO LETRA: nombre, apellido, e-mail, etc ----- */
 label {
     margin-left: 8px;
-    font-size: 30px;
+    font-size: 25px;
     padding: 5px;
     display: block;
     width: 100%;
@@ -49,7 +58,6 @@ input {
     border: 1px solid #ccc;
     font-style: italic;
     font-size: 20px;
-    font-family: 'Caveat', cursive;
 }
 
 input:focus {
@@ -90,5 +98,44 @@ form h3{
     justify-content: center;
 }
 .createButton{
-    width: 30%;
+    display: flex;
+    
+    justify-content: flex-end;
+}
+.createButton button{
+    width: 50%;
+    font-size: large;
+    background-color: #0E2240;
+    color: #fff;
+    cursor: pointer;
+    margin:auto;
+    border: none;
+    padding: 1%;
+    border-radius: 20px 10px 20px 10px;
+}
+.createButton button:hover {
+    background-color: #EF3242;
+}
+.card-buttons {
+    grid-area: buttons;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width:35%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.card-buttons > button {
+    margin: 2%;
+    padding: 0.5%;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: white;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+    width:10%;
 }
