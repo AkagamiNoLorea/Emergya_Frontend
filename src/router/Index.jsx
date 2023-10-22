@@ -6,8 +6,8 @@ import ListaOficinas from "../components/oficinas/ListaOficinas";
 import CrearOficinas from "../components/oficinas/CrearOficina";
 import EditarOficinas from "../components/oficinas/EditarOficina";
 import BorrarOficinas from "../components/oficinas/BorrarOficina";
+//import CrearPuesto from "../components/puestos/CrearPuesto";
 import EditListaPuestos from "../components/puestos/EditListaPuestos";
-import ElegirOficina from "../components/puestos/ElegirOficina"
 import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
@@ -58,12 +58,12 @@ export const router = createBrowserRouter([
                 path: "/private/borraroficinas/:oficinaId",
                 element: <BorrarOficinas />
             },
+            /*{
+                path: "/private/crearpuesto",
+                element: <CrearPuesto />
+            },*/
             {
-                path: "/private/elegiroficina",
-                element: <ElegirOficina />
-            },
-            {
-                path: "/private/editarpuestos/:oficinaId",
+                path: "/private/editarpuestos",
                 element: <EditListaPuestos />
             }            
         ]
