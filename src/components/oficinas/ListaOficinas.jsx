@@ -27,6 +27,7 @@ const ListaOficinas = () => {
     };
 
     const handleDeleteOficina = (oficina) => {
+        console.log("handleInOficinaDelete1")
         navigate(`/private/borraroficinas/${oficina.id}`);
     };
 

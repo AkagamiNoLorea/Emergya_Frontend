@@ -1,69 +1,83 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { Icon } from '@iconify/react';
 
-const url = "http://localhost:8086/api/v1/Usuariopuesto"
+
+const url = "http://localhost:8080/api/v1/usuario"
 
 const EditarUsuario = () => {
 
-  const [Estado, setEstado] = useState('')
-  const [Oficina, setOficina] = useState('')
-  const [Puesto, setPuesto] = useState('')
-  const [Usuario, setUsuario] = useState('')
+  const [usuario, setUsuario] = useState({})
+  const [nombre, setNombre,] = useState('')
+  const [email, setEmail] = useState('')
+  const [empresa, setEmpresa] = useState('')
+  const [isAdmin, setIsAdmin] = useState('')
   const navigate = useNavigate()
-
   const { id } = useParams()
 
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      try {
+      const response = await axios.get(`${url}/${id}`)
+      setUsuario(response.data)
+      setNombre(response.data.nombre)
+      setEmail(response.data.email)
+      setEmpresa(response.data.empresa)
+      setIsAdmin(response.data.isAdmin)
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+    fetchUsuario();
+  }, [usuarioId]);
   const update = async (e) => {
     e.preventDefault()
-    await axios.put(`${url}/${id}`, { Estado: Estado, Oficina: Oficina, Puesto: Puesto, Usuario: Usuario })
-    navigate("/proyectos")
+    await axios.put(`${url}/${usuarioId}`, {usuario: usuario, nombre: nombre, email: email, oficina: oficina, isAdmin: isAdmin })
+    navigate("/private/listausers")
   }
-  useEffect(() => {
-    const getCharactersById = async () => {
 
-      const response = await axios.get(`${url}/${id}`)
-      setEstado(response.data.titulo)
-      setOficina(response.data.imagen)
-      setPuesto(response.data.git)
-      setUsuario(response.data.descripcion)
-    }
-
-    getCharactersById()
-  }, [id])
+  const goBack = () => {
+    navigate("/private/listausers");
+}
 
   return (
     <>
-      {<div className="contenedor-con-fondo">
-        <img className='imagenfondo' />
-      </div>}
-      <div className="contenedor-form"><h2>Editar Repositorio</h2>
-        <div className="contenedor-form1">
-          <div className="formulario">
-            <form onSubmit={update}>
-              <div>
-                <label>Titulo:</label>
-                <input type="text" value={Estado} onChange={(e) => setEstado(e.target.value)} />
-              </div>
-              <div>
-                <label>Imagen:</label>
-                <input type="text" value={Oficina} onChange={(e) => setOficina(e.target.value)} />
-              </div>
-              <div>
-                <label>Git:</label>
-                <input type="text" value={Puesto} onChange={(e) => setPuesto(e.target.value)} />
-              </div>
-              <div>
-                <label>Descripción:</label>
-                <textarea name="" id="" cols="30" rows="10" value={Usuario} onChange={(e) => setUsuario(e.target.value)}>
-                </textarea>
-              </div>
-              <button type="submit"><Icon icon="bxs:edit" color="blue" /></button>
-            </form>
-          </div>
-        </div>
-      </div>
+      <form onSubmit={update}>
+            <div className="applicationForm">
+                <h2>Crear Usuario</h2>
+            </div>
+            <div className="contenedor-form">
+                <div className="formTable">
+                    <div>
+                        <label>Nombre y Apellidos:</label>
+                        <input type="text" value={usuario.nombre} onChange={(e) => setNombre(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Correo electrónico:</label>
+                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Oficina por defecto:</label>
+                        <input type="text" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
+                    </div>
+                    <div>
+                        <label>Rol:</label>
+                        <select value={isAdmin} onChange={(e) => setIsAdmin(e.target.value)}>
+                            <option value="false">Usuario</option>
+                            <option value="true">Administrador</option>
+                        </select>
+                    </div>
+                    <div className='form2Buttons'>
+                            <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
+                            <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i></button>
+                        </div>
+                </div>
+            </div>
+        </form>
     </>
   )
 }

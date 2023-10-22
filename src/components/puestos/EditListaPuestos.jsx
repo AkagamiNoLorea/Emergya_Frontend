@@ -1,8 +1,22 @@
 
-/*En esta parte te mostrará una lista de "cards" (cada card es un puesto de la oficina escogida anteriormente),
-se mostrará un switch para activar o desactibar la disponibilidad del misno puesto, y boton guardar cambios */
-/*visualización cards api y funcion put*/
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 const EditListaPuestos = () => {
+  const [puestos, setPuestos] = useState([]);
+  const [idOficina, setIdOficina] = useState(''); // Estado para el valor del filtro
+
+  useEffect(() => {
+    // Hacer una solicitud GET al backend con el filtro
+    axios.get(`http://localhost:8086/api/v1/puestos?idOficina=${idOficina}`)
+      .then(response => {
+        setPuestos(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [idOficina]); // La solicitud se hará cada vez que idOficina cambie
+
   return (
     <div>EditListaPuestos</div>
   )

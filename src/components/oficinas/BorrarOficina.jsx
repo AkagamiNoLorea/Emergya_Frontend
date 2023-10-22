@@ -14,6 +14,7 @@ const BorrarOficina = () => {
   useEffect(() => {
     const fetchOficina = async () => {
       try {
+        console.log("handleInOficinaDelete2")
         const response = await axios.get(`${url}/${oficinaId}`);
         setOficina(response.data);
       } catch (error) {
@@ -28,13 +29,12 @@ const BorrarOficina = () => {
     navigate("/private/listaoficinas");
   };
 
-  const handleDeleteOficina = async () => {
-    try {
-      await axios.delete(`${url}/${oficinaId}`);
-      navigate("/private/listaoficinas");
-    } catch (error) {
-      setError(error.message);
-    }
+  const handleDeleteOficina = async (e) => {
+    e.preventDefault()
+      await axios.delete(`${url}/${oficinaId}`)
+      .then(()=>{
+        navigate("/private/listaoficinas")})
+      .catch((error)=>console.log("error"));
   };
 
   if (error) {
@@ -50,7 +50,7 @@ const BorrarOficina = () => {
         <h3>¿Estás seguro de que quieres eliminar esta oficina?</h3>
         <div className='form2Buttons'>
           <button className='formButton' onClick={handleDeleteOficina}><i className="fa-solid fa-check"></i> Eliminar</button>
-          <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i>Cancelar</button>
+          <button className='formButton' onClick={goBack}><i className="fa-solid fa-xmark"></i>Cancelar</button>
         </div>
     </form>
     </div>

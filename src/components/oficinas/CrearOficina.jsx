@@ -21,38 +21,38 @@ const CrearOficina = () => {
     }
     const goBack = () => {
         navigate("/private/listaoficinas");
-      }
+    }
     return (
         <>
             <form onSubmit={guardar}>
-            <div className="applicationForm">
-            <h2>Crear Oficina</h2>
-        </div>
-            <div className="contenedor-form">
+                <div className="applicationForm">
+                    <h2>Crear Oficina</h2>
+                </div>
+                <div className="contenedor-form">
                     <div className="formTable">
-                            <div>
-                                <label>Nombre de la oficina:</label>
-                                <input type="text" value={nombreoficina} onChange={(e) => setNombreoficina(e.target.value)} />
-                            </div>
-                            <div>
-                                <label>Numero de puesto:</label>
-                                <input type="text" value={puesto} onChange={(e) => setPuesto(e.target.value)} />
-                            </div>
-                            <div>
-                                <label>Plano de distribución:</label>
-                                <input type="text" value={planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
-                            </div>
-                            <div>
-                                <label>Días de antelación máxima:</label>
-                                <input type="text" value={diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}></input>
-                            </div>
-                            <div className='form2Buttons'>
-              <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
-              <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i></button>
-            </div>
+                        <div>
+                            <label>Nombre de la oficina:</label>
+                            <input type="text" value={nombreoficina} onChange={(e) => setNombreoficina(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Numero de puesto:</label>
+                            <input type="text" value={puesto} onChange={(e) => setPuesto(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Plano de distribución:</label>
+                            <input type="text" value={planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
+                        </div>
+                        <div>
+                            <label>Días de antelación máxima:</label>
+                            <input type="text" value={diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}></input>
+                        </div>
+                        <div className='form2Buttons'>
+                            <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
+                            <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i></button>
+                        </div>
                     </div>
                 </div>
-                </form>
+            </form>
         </>
     )
 }

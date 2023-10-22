@@ -1,47 +1,45 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { NavLink } from "react-router-dom"
-import { Icon } from '@iconify/react';
+import { useNavigate } from "react-router-dom";
+import '../estilos/Forms.css'
 
-const url = "http://localhost:8086/api/v1/Usuariopuesto"
+
+const url = "http://localhost:8080/api/v1/usuario"
 const ListaUsuario = () => {
 
-    const [characters, setCharacters] = useState([])
+    const [usuarios, setUsuarios] = useState([])
+    const [nombre, setNombre,] = useState('')
 
     useEffect(() => {
-        getAllcharacters()
+        const fetchUsuarios = async () => {
+            const response = await axios.get(url);
+            setUsuarios(response.data)
+        }
+        fetchUsuarios()
     }, [])
 
-    const getAllcharacters = async () => {
-        const response = await axios.get(url)
-        let data = response.data
-        setCharacters(data)
-    }
+    const handleDelete = async (usuario) => {
+        await axios.delete(`${url}/${usuario.id}`);
+        setUsuarios(prevUsuarios => prevUsuarios.filter(user => user.id !== usuario.id));
+        alert(`ATENCION! ELIMINANDO USUARIO ${usuario.nombre}`);
 
-    const handleDelete = async (id) => {
-        await axios.delete(`${url}/${id}`);
-        setCharacters((prevCharacter) => prevCharacter.filter((character) => character.id !== id));
-        alert(`ATENCION! ELIMINANDO REPOSITORIO ID#${id}`);
     };
-
-    getAllcharacters()
 
     return (
         <>
             {
-                characters.map(character => (
-                    <div className='contenedor-api1' key={character.id}>
-                        <div className='contenedor-api2'>
-                            <div className='card-api'>
-                                <h3>{character.Nombre}</h3>
-                                <NavLink to={`/editar/${character.id}`}><button className='boton-edit' ><Icon icon="bxs:edit" color="blue" /></button></NavLink>
-                                <button className="boton-borrar" onClick={() => handleDelete(character.id)}><Icon icon="bi:trash-fill" color="maroon" /></button>
-                            </div>
+                usuarios.map((usuario) => (
+                    <div className="card" key={usuario.id}>
+                        <div className="card-text">
+                            <h2>{usuario.nombre}</h2>
                         </div>
-                    </div>
+                        <div className="card-buttons">
+                            <button onClick={() => navigate(`/private/editaruser/${usuario.id}`)}><i className="fa-solid fa-pen"></i> </button>
+                            <button onClick={() => handleDelete(usuario)}><i className="fa-solid fa-xmark"></i> </button>
+                        </div>
+                    </div >
                 ))
             }
-
         </>
     )
 }
