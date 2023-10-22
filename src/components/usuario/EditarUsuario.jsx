@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 
 
 const url = "http://localhost:8080/api/v1/usuario"
+const urlOficina = "http://localhost:8080/api/v1/oficina"
 
 const EditarUsuario = () => {
 
@@ -13,17 +14,23 @@ const EditarUsuario = () => {
   const [empresa, setEmpresa] = useState('')
   const [isAdmin, setIsAdmin] = useState('')
   const navigate = useNavigate()
-  const { id } = useParams()
+  const {id} = useParams()
+  const [error, setError] = useState(null);
+  const [oficinas, setOficinas] = useState([]);
+
 
   useEffect(() => {
+    
     const fetchUsuario = async () => {
       try {
       const response = await axios.get(`${url}/${id}`)
+      const responseOficina = await axios.get(urlOficina)
       setUsuario(response.data)
       setNombre(response.data.nombre)
       setEmail(response.data.email)
       setEmpresa(response.data.empresa)
       setIsAdmin(response.data.isAdmin)
+      setOficinas(responseOficina.data)
     } catch (error) {
       setError(error.message);
     }
@@ -31,12 +38,11 @@ const EditarUsuario = () => {
   if (error) {
     return <p>Error: {error}</p>;
   }
-
     fetchUsuario();
-  }, [usuarioId]);
+  }, [id]);
   const update = async (e) => {
     e.preventDefault()
-    await axios.put(`${url}/${usuarioId}`, {usuario: usuario, nombre: nombre, email: email, oficina: oficina, isAdmin: isAdmin })
+    await axios.put(`${url}/${id}`, {usuario: usuario, nombre: nombre, email: email, empresa: empresa, isAdmin: isAdmin })
     navigate("/private/listausers")
   }
 
@@ -48,21 +54,27 @@ const EditarUsuario = () => {
     <>
       <form onSubmit={update}>
             <div className="applicationForm">
-                <h2>Crear Usuario</h2>
+                <h2>Modificar Usuario</h2>
             </div>
             <div className="contenedor-form">
                 <div className="formTable">
                     <div>
                         <label>Nombre y Apellidos:</label>
-                        <input type="text" value={usuario.nombre} onChange={(e) => setNombre(e.target.value)} />
+                        <input type="text" defaultValue={usuario.nombre} onChange={(e) => setNombre(e.target.value)} />
                     </div>
                     <div>
                         <label>Correo electrónico:</label>
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" defaultValue={usuario.email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div>
                         <label>Oficina por defecto:</label>
-                        <input type="text" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
+                        <select value={empresa} onChange={(e) => setEmpresa(e.target.value)}>
+                        {
+                        oficinas.map((oficina, index) => {
+                          return <option key={index} value={oficina.id}>{oficina.nombreoficina}</option>;
+                            })
+                            }
+                        </select>
                     </div>
                     <div>
                         <label>Rol:</label>

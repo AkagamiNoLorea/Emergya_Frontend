@@ -8,7 +8,8 @@ const url = "http://localhost:8080/api/v1/usuario"
 const ListaUsuario = () => {
 
     const [usuarios, setUsuarios] = useState([])
-    const [nombre, setNombre,] = useState('')
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         const fetchUsuarios = async () => {
@@ -26,9 +27,14 @@ const ListaUsuario = () => {
     };
 
     return (
-        <>
+        <><div className="titulopagina"><h1>Lista de usuarios</h1>
+        <div className="createButton">
+            <button onClick={() => navigate("/private/crearuser")}> Crear Usuario</button>
+        </div></div>
             {
-                usuarios.map((usuario) => (
+                usuarios
+                .sort((a, b) => a.nombre.localeCompare(b.nombre))
+                .map((usuario) => (
                     <div className="card" key={usuario.id}>
                         <div className="card-text">
                             <h2>{usuario.nombre}</h2>

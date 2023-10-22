@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
                 element: <CrearUsuario />
             },
             {
-                path: "/private/editaruser/:userId",
+                path: "/private/editaruser/:id",
                 element: <EditarUsuario />
             },
             {
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
                 element: <BorrarOficinas />
             },
             {
-                path: "/private/elegiroficinas",
+                path: "/private/elegiroficina",
                 element: <ElegirOficina />
             },
             {
