@@ -1,0 +1,45 @@
+.leyendaBox {
+    border: 2px solid black;
+    width: 25%;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li div {
+    content: "";
+    width: 25px;
+    height: 25px;
+}
+
+li:nth-child(1) div {
+    background-color: grey;
+}
+
+li:nth-child(2) div {
+    background-color: blue;
+}
+
+li:nth-child(3) div {
+    background-color: green;
+}
+
+li:nth-child(4) div {
+    background-color: yellow;
+}
+
+li:nth-child(5) div {
+    background-color: orange;
+}
+
+li:nth-child(6) div {
+    background-color: red;
+}
+
+li h3 {
+    margin: 2%
+}
+
