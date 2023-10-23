@@ -2,7 +2,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/usuario"
+const url = "http://localhost:8080/api/v1/usuario"
 
 const CrearUsuario = () => {
 
@@ -14,10 +14,17 @@ const CrearUsuario = () => {
     const navigate = useNavigate()
 
     const guardar = async (e) => {
-        e.preventDefault()
-        await axios.post(url, { Nombreoficina: Nombreoficina, Puesto: Puesto, Planodistribucion: Planodistribucion, Diasantelacion: Diasantelacion })
-        navigate("/proyectos")
-    }
+        e.preventDefault();
+        await axios.post(url, {
+            Nombreoficina: Nombreoficina,
+            Puesto: Puesto,
+            Planodistribucion: Planodistribucion,
+            Diasantelacion: Diasantelacion
+        });
+        navigate("/confirmarreserva", {
+            state: { nombreOficina: Nombreoficina }
+        });
+    };    
 
     return (
         <>

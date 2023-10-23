@@ -18,8 +18,7 @@ const ElegirOficina = () => {
           setOficina(data)
       }
 
-  
-      getAllOficinas()
+
   
       return (
           <>

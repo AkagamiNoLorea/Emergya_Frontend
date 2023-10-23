@@ -12,6 +12,8 @@ import CrearReserva from "../components/reservas/CrearReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
 import Layout from "../layout/Layout";
+import ConfirmarReserva from "../components/reservas/ConfirmarReserva";
+
 
 export const router = createBrowserRouter([
     {
@@ -21,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <CrearReserva />
+            },
+            {
+                path: "/confirmarreserva",
+                element: <ConfirmarReserva />
             },
             {
                 path: "/misreservas/:userId",
