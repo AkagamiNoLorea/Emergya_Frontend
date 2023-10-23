@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
 .pestanyas{
     display: flex;
@@ -18,7 +19,7 @@
   .usuario a {
     color:black;
     float: right;
-    font-size: 20px;
+    font-size: 30px;
   }
   
   .dropdown {
@@ -27,7 +28,7 @@
   }
   
   .dropdown .dropbtn {
-    font-size: 20px;  
+    font-size: 30px;  
     border: none;
     outline: none;
     padding: 14px 16px;
@@ -37,29 +38,29 @@
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: #EF3242;
   }
   
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: blue;
+    background-color: #0E2240;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px yellow;
+   
     z-index: 1;
   }
   
   .dropdown-content a {
     float: none;
     color: white;
-    padding: 12px 16px;
+    padding: 16px 18px;
     text-decoration: none;
     display: block;
     text-align: left;
   }
   
   .dropdown-content a:hover {
-    background-color: blue;
+    background-color: #EF3242;
   }
   
   .dropdown:hover .dropdown-content {
