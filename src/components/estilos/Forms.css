@@ -139,3 +139,10 @@ form h3{
     padding: 1%;
     width:10%;
 }
+.contenedor-puestos{
+    display: grid;
+    grid-row: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.card-puesto{
+border: 1px solid black;
+}
