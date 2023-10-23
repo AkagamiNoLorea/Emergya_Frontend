@@ -1,4 +1,5 @@
 import '../estilos/Crearreserva.css'
+import Calendar from 'react-calendar'
 /* import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -27,7 +28,12 @@ const CrearUsuario = () => {
             <h2>Puestos estado</h2>
             <div className="contenedor-form">
                 <div className="contenedor-form1">
-                    
+                <select id="seleccionar">
+                    <option value=""> Selecciona oficina:</option>
+                    <option value="Turno de mañana">Capitolio-Proxya-Principal</option>
+                    <option value="Turno de tarde">Emergya-Edificio-Forum</option>
+                    </select>
+                    <Calendar />
                     <div className='contenedor-puesto'>
                         <button>1</button>
                         <button>2</button>
