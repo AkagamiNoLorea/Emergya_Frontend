@@ -49,7 +49,7 @@ const onChangeOficina = async (idOficina, e) => {
   setIdOficina(idOficina);
   await axios.get(`${url}/${idOficina}`)
     .then((response) => {
-      setlistaOficinas(response.data);
+      setListaOficinas(response.data);
     });
 }
 
@@ -77,11 +77,11 @@ const onChangeOficina = async (idOficina, e) => {
                 <h2>{puesto.numero}</h2>
               </div>
               <div className="card-buttons">
-                <div class="toggle-switch" onChange={(e) => setDisponible(e.target.value)}>
-                  <input type="checkbox" class="toggle-switch-checkbox" name="toggleSwitch" id="toggleSwitch" />
-                  <label class="toggle-switch-label" for="toggleSwitch">
-                    <span class="toggle-switch-inner"></span>
-                    <span class="toggle-switch-switch"></span>
+                <div className="toggle-switch" onChange={(e) => setDisponible(e.target.value)}>
+                  <input type="checkbox" className="toggle-switch-checkbox" name="toggleSwitch" id="toggleSwitch" />
+                  <label className="toggle-switch-label" for="toggleSwitch">
+                    <span className="toggle-switch-inner"></span>
+                    <span className="toggle-switch-switch"></span>
                   </label>
                 </div>
                 <button onClick={() => handleDelete(puesto)}><i className="fa-solid fa-xmark"></i> </button>
