@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { Icon } from '@iconify/react';
 
-const url = "http://localhost:8086/api/v1/usuario"
+/*const url = "http://localhost:8080/api/v1/usuario"*/
 const MisReservas = () => {
-
+/*
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
@@ -24,23 +24,33 @@ const MisReservas = () => {
         alert(`ATENCION! ELIMINANDO REPOSITORIO ID#${id}`);
     };
 
-    getAllcharacters()
+    getAllcharacters()>*/
 
     return (
         <>
-            {
-                characters.map(character => (
-                    <div className='contenedor-api1' key={character.id}>
-                        <div className='contenedor-api2'>
-                            <div className='card-api'>
-                                <h3>{character.Nombre}</h3>
-                                <NavLink to={`/editar/${character.id}`}><button className='boton-edit' ><Icon icon="bxs:edit" color="blue" /></button></NavLink>
-                                <button className="boton-borrar" onClick={() => handleDelete(character.id)}><Icon icon="bi:trash-fill" color="maroon" /></button>
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
+    
+
+<div className='container'>
+   <label for="seleccionar">Reservar:</label>
+   <select id="seleccionar">
+   <option value="">Escojer Turno:</option>
+<option value="Turno de mañana">Turno de mañana</option>
+<option value="Turno de tarde">Turno de Tarde</option>
+<option value="Todo el día">Todo el día</option>
+</select>
+
+<button className='boton'>Nombre de la oficina</button>
+  <p></p>
+  <p>Puesto reservado:</p>
+
+
+<button className='Confirmarreserva'>Confirmar reserva</button>
+<button className='Cancelar'>Cancelar</button>
+
+
+
+
+</div>
 
         </>
     )
