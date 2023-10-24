@@ -18,8 +18,7 @@ const Navbar = () => {
             <a href="usuario">Usuarios</a>
           </div>
           <div className="dropdown">
-            <button className="dropbtn">Administrador
-              <i className="fa fa-caret-down"></i>
+            <button className="dropbtn">Administrador <i className="fa fa-caret-down"></i>
             </button>
             <div className="dropdown-content">
               <a href="gestionar_usuario">Gestionar Usuario</a>
