@@ -50,7 +50,7 @@ const CrearUsuario = () => {
             <div className="contenedor-form">
                 <div className="formTable">
                     <div>
-                        <label>Nombre y Apellidos:</label>
+                        <label>Apellidos, Nombre:</label>
                         <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                     </div>
                     <div>

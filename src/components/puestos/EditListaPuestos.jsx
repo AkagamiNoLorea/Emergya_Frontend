@@ -18,13 +18,14 @@ const EditListaPuestos = () => {
       try {
         await axios.get(urlOficina)
           .then((response) => {
-            console.log(response)
             setListaOficinas(response.data);
-            if(idOficina === null||idOficina === ''){
+            if (idOficina === null || idOficina === '') {
               setIdOficina(response.data[0].id);
+              return axios.get(`${url}/${response.data[0].id}`)
+            } else {
+              return axios.get(`${url}/${idOficina}`)
             }
-            console.log(idOficina)
-            return axios.get(`${url}/${response.data[0].id}`)
+
           }).then((responsePuestos) => {
             setPuestos(responsePuestos.data);
           });
@@ -39,19 +40,28 @@ const EditListaPuestos = () => {
     fetchPuestos();
   }, [idOficina]);
 
-const handleDelete = async (puesto) => {
-  await axios.delete(`${url}/${puesto.id}`);
-  setPuestos(prevPuestos => prevPuestos.filter(puesto => puesto.id !== puesto.id));
-  alert(`ATENCION! ELIMINANDO PUESTO ${puesto.numero}`);
-}
-const onChangeOficina = async (idOficina, e) => {
-  e.preventDefault()
-  setIdOficina(idOficina);
-  await axios.get(`${url}/${idOficina}`)
-    .then((response) => {
-      setListaOficinas(response.data);
-    });
-}
+  const handleDelete = async (puesto) => {
+    await axios.delete(`${url}/${puesto.id}`);
+    setPuestos(prevPuestos => prevPuestos.filter(puesto => puesto.id !== puesto.id));
+    alert(`ATENCION! ELIMINANDO PUESTO ${puesto.numero}`);
+  }
+  const onChangeOficina = async (idOficina, e) => {
+    e.preventDefault()
+    setIdOficina(idOficina);
+    await axios.get(`${url}/${idOficina}`)
+      .then((response) => {
+        setListaOficinas(response.data);
+      });
+  }
+  const saveDisponible = async (disponible, puesto) => {
+    const newPuesto = {
+      ...puesto,
+      disponible: disponible
+    }
+    await axios.put(`${url}/${newPuesto.id}`, newPuesto)
+    alert(`ATENCION! CAMBIADA DISPONIBILIDAD DE PUESTO ${puesto.numero}`);
+  }
+
 
   return (
     <>
@@ -70,16 +80,17 @@ const onChangeOficina = async (idOficina, e) => {
         </div></div>
       {
         puestos
-          //.sort((a, b) => a.numero.localeCompare(b.numero))
-          .map((puesto) => (
+          .sort((a, b) => a.numero - b.numero)
+          .map((puesto, index) => (
+            <div className="card-lista-puesto">
             <div className="card" key={puesto.id}>
               <div className="card-text">
                 <h2>{puesto.numero}</h2>
               </div>
               <div className="card-buttons">
-                <div className="toggle-switch" onChange={(e) => setDisponible(e.target.value)}>
-                  <input type="checkbox" className="toggle-switch-checkbox" name="toggleSwitch" id="toggleSwitch" />
-                  <label className="toggle-switch-label" for="toggleSwitch">
+                <div className="toggle-switch" >
+                  <input type="checkbox" onChange={(e) => saveDisponible(e.target.checked, puesto)} className="toggle-switch-checkbox" name="toggleSwitch" id={"toggleSwitch" + index} />
+                  <label className="toggle-switch-label" for={"toggleSwitch" + index}>
                     <span className="toggle-switch-inner"></span>
                     <span className="toggle-switch-switch"></span>
                   </label>
@@ -87,6 +98,7 @@ const onChangeOficina = async (idOficina, e) => {
                 <button onClick={() => handleDelete(puesto)}><i className="fa-solid fa-xmark"></i> </button>
               </div>
             </div >
+            </div>
           ))
       }
     </>

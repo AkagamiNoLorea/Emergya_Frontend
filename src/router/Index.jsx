@@ -6,9 +6,10 @@ import ListaOficinas from "../components/oficinas/ListaOficinas";
 import CrearOficinas from "../components/oficinas/CrearOficina";
 import EditarOficinas from "../components/oficinas/EditarOficina";
 import BorrarOficinas from "../components/oficinas/BorrarOficina";
-//import CrearPuesto from "../components/puestos/CrearPuesto";
+import CrearPuesto from "../components/puestos/CrearPuesto";
 import EditListaPuestos from "../components/puestos/EditListaPuestos";
 import CrearReserva from "../components/reservas/CrearReserva";
+import ConfirmarReserva from "../components/reservas/ConfirmarReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
 import Layout from "../layout/Layout";
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
             {
                 path: "/misreservas/:userId",
                 element: <MisReservas />
+            },
+            {
+                path: "/confirmarreserva",
+                element: <ConfirmarReserva />
             },
             {
                 path: "/borrarreserva/:reservaId",
@@ -58,10 +63,10 @@ export const router = createBrowserRouter([
                 path: "/private/borraroficinas/:oficinaId",
                 element: <BorrarOficinas />
             },
-            /*{
+            {
                 path: "/private/crearpuesto",
                 element: <CrearPuesto />
-            },*/
+            },
             {
                 path: "/private/editarpuestos",
                 element: <EditListaPuestos />

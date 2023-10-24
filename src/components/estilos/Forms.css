@@ -146,3 +146,7 @@ form h3{
 .card-puesto{
 border: 1px solid black;
 }
+.card-lista-puesto{
+    display: grid;
+    grid-column: 1fr 1fr 1fr 1fr 1fr  ;
+}

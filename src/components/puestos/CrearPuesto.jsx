@@ -1,4 +1,4 @@
-/*import axios from "axios"
+import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import '../estilos/Forms.css'
@@ -25,7 +25,7 @@ const CrearPuesto = () => {
         <>
             <form onSubmit={guardar}>
                 <div className="applicationForm">
-                    <h2>Crear Oficina</h2>
+                    <h2>Crear Puesto</h2>
                 </div>
                 <div className="contenedor-form">
                     <div className="formTable">
@@ -56,4 +56,4 @@ const CrearPuesto = () => {
     )
 }
 
-export default CrearOficina*/
+export default CrearPuesto

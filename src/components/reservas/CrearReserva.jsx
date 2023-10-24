@@ -1,29 +1,28 @@
 import '../estilos/Crearreserva.css'
-import Calendar from 'react-calendar'
-/* import axios from "axios"
+//import Calendar from 'react-calendar'
+import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/usuario"  */
+const url = "http://localhost:8086/api/v1/usuariopuesto"
 
 const CrearReserva = () => {
-
-    /* const [Nombreoficina, setNombreoficina,] = useState('')
-    const [Puesto, setPuesto] = useState('')
-    const [Planodistribucion, setPlanodistribucion] = useState('')
-    const [Diasantelacion, setDiasantelacion] = useState('')
+    const [idUsuario, setIdUsuario] = useState('')
+    const [idPuesto, setIdPuesto] = useState('')
+    const [disponible, setDisponible] = useState('')
+    const [numero, setNumero] = useState('')
 
     const navigate = useNavigate()
 
     const guardar = async (e) => {
         e.preventDefault()
-        await axios.post(url, { Nombreoficina: Nombreoficina, Puesto: Puesto, Planodistribucion: Planodistribucion, Diasantelacion: Diasantelacion })
+        await axios.post(url, { disponible: disponible, idOficina: idOficina })
         navigate("/proyectos")
-    }  */
+    }
 
     function comparar(a, b) {
         return a - b;
-      }
+    }
 
     return (
         <>

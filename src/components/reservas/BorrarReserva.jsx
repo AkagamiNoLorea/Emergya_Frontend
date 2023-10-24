@@ -30,7 +30,7 @@ const BorrarReserva = () => {
 
   const handleDeleteOficina = async () => {
     try {
-      await axios.delete(`${url}/${oficinaId}`);
+      await axios.delete(`${url}/${usuariopuestoId}`);
       navigate("/private/listaoficinas");
     } catch (error) {
       setError(error.message);

@@ -1,6 +1,7 @@
 
 import '../components/estilos/Navbar.css'
 import logo from '../assets/img/logo.png'
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
 
@@ -18,9 +19,9 @@ const Navbar = () => {
             <button className="dropbtn">Administrador <i className="fa fa-caret-down"></i>
             </button>
             <div className="dropdown-content">
-              <a href="gestionar_usuario">Gestionar Usuario</a>
-              <a href="gestionar_oficinas">Gestionar Oficinas</a>
-              <a href="gestionar_asientos">Gestionar Asientos</a>
+              <NavLink to="/private/listausers">Gestionar usuarios</NavLink>
+              <NavLink to="/private/listaoficinas">Gestionar oficinas</NavLink>
+              <NavLink to="/private/editarpuestos">Gestionar puestos</NavLink>
             </div>
           </div>
         </div>
