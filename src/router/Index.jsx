@@ -13,6 +13,7 @@ import ConfirmarReserva from "../components/reservas/ConfirmarReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
 import Layout from "../layout/Layout";
+import ConfirmarReservas from "../components/usuario/ConfirmarReservas";
 
 export const router = createBrowserRouter([
     {
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
             {
                 path: "/private/editarpuestos",
                 element: <EditListaPuestos />
-            }            
+            },
+            {
+                path: "/private/confirmarreserva",
+                element: <ConfirmarReservas />
+            }               
         ]
     }])
