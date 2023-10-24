@@ -1,9 +1,10 @@
-.navbar{
+/*.navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+background-color: yellow;
 
-}
+}*/
 .pestanyas{
     display: flex;
     flex-direction: row;
@@ -21,7 +22,12 @@
     float: right;
     font-size: 30px;
   }
-  
+  .img {
+background-color: red;
+height: 1rem;
+
+;
+  }
   .dropdown {
     float: right;
     overflow: hidden;
