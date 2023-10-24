@@ -10,12 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.5.1",
+=======
+    "axios": "^1.4.0",
+    "prop-types": "^15.8.1",
+>>>>>>> origin/Aida
     "react": "^18.2.0",
+    "react-calendar": "^4.6.1",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-router-dom": "^6.17.0"
+=======
+    "react-props": "^0.0.3",
+    "react-router-dom": "^6.14.1"
+>>>>>>> origin/Aida
   },
   "devDependencies": {
+    "@iconify/react": "^4.1.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -23,6 +35,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "node-sass": "^9.0.0",
+    "sass": "^1.69.4",
     "vite": "^4.3.9"
   }
 }
