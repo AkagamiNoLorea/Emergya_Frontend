@@ -1,11 +1,12 @@
 import '../estilos/Crearreserva.css'
 import Calendar from 'react-calendar'
-import  'react-calendar/dist/Calendar.css' ;
-/* import axios from "axios"
+import  'react-calendar/dist/Calendar.css' 
+
+/*import axios from "axios"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/usuario"  */
+const url = "http://localhost:8086/api/v1/usuario"*/  
 
 const CrearUsuario = () => {
 
@@ -24,9 +25,11 @@ const CrearUsuario = () => {
 
     return (
         <>
-            {<div className="contenedor-con-fondo">
-            </div>}
+            <div className="contenedor-con-fondo">
+                <img src="src\assets\img\emergya.jpg"/>
+            </div>
             <h2>Puestos estado</h2>
+            
             <div className="contenedor-form">
                 <div className="contenedor-form1">
                 <select id="seleccionar">
