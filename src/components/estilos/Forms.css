@@ -19,6 +19,12 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 }
+.reservation{
+    width: 20%;
+    font-size:xx-large;
+    padding: 5%;
+
+}
 .titulopagina{
     margin:2%;
     text-align: center;
@@ -178,4 +184,10 @@ select{
     transition: all 0.25s ease;
     width:20%;
     margin-left: 5%;
+}
+.contenedor-form h3{
+    margin: 6%;
+}
+.cards-container{
+    display: flex;
 }

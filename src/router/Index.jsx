@@ -24,7 +24,7 @@ export const router = createBrowserRouter([
                 element: <CrearReserva />
             },
             {
-                path: "/misreservas/:userId",
+                path: "/misreservas",
                 element: <MisReservas />
             },
             {

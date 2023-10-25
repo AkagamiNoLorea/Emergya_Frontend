@@ -2,27 +2,11 @@ import '../estilos/Crearreserva.css'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import '../estilos/Forms.css'
-
-/*import axios from "axios"
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const url = "http://localhost:8086/api/v1/usuario"*/
 
 const CrearUsuario = () => {
-
-    /* const [Nombreoficina, setNombreoficina,] = useState('')
-    const [Puesto, setPuesto] = useState('')
-    const [Planodistribucion, setPlanodistribucion] = useState('')
-    const [Diasantelacion, setDiasantelacion] = useState('')
-
     const navigate = useNavigate()
-
-    const guardar = async (e) => {
-        e.preventDefault()
-        await axios.post(url, { Nombreoficina: Nombreoficina, Puesto: Puesto, Planodistribucion: Planodistribucion, Diasantelacion: Diasantelacion })
-        navigate("/proyectos")
-    }  */
 
     return (
         <>
@@ -36,7 +20,6 @@ const CrearUsuario = () => {
             <div className="bodyReservas">
                 <aside>
                     <div>
-
                         <Calendar />
                         <div className="leyendaBox">
                             <ul>
@@ -56,7 +39,7 @@ const CrearUsuario = () => {
                         <button className="boton rojo">2</button>
                         <button className="boton amarillo">3</button>
                         <button className="boton azul">4</button>
-                        <button className="boton verde">5</button>
+                        <button className="boton verde"onClick={() => navigate("/confirmarreserva")}>5</button>
                         <button className="boton naranja">6</button>
                         <button className="boton">7</button>
                         <button className="boton amarillo">8</button>

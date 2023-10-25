@@ -1,49 +1,70 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { NavLink } from "react-router-dom"
-import { Icon } from '@iconify/react';
+import { useNavigate } from "react-router-dom";
 
-const url = "http://localhost:8086/api/v1/usuario"
+
 const MisReservas = () => {
-
-    const [characters, setCharacters] = useState([])
-
-    useEffect(() => {
-        getAllcharacters()
-    }, [])
-
-    const getAllcharacters = async () => {
-        const response = await axios.get(url)
-        let data = response.data
-        setCharacters(data)
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate("/private/listaoficinas");
     }
 
-    const handleDelete = async (id) => {
-        await axios.delete(`${url}/${id}`);
-        setCharacters((prevCharacter) => prevCharacter.filter((character) => character.id !== id));
-        alert(`ATENCION! ELIMINANDO REPOSITORIO ID#${id}`);
-    };
-
-    getAllcharacters()
-
     return (
-        <>
-            {
-                characters.map(character => (
-                    <div className='contenedor-api1' key={character.id}>
-                        <div className='contenedor-api2'>
-                            <div className='card-api'>
-                                <h3>{character.Nombre}</h3>
-                                <NavLink to={`/editar/${character.id}`}><button className='boton-edit' ><Icon icon="bxs:edit" color="blue" /></button></NavLink>
-                                <button className="boton-borrar" onClick={() => handleDelete(character.id)}><Icon icon="bi:trash-fill" color="maroon" /></button>
+        <div className='cards-container'>
+            <div className='card reservation'>
+                <div className='card-body'>
+                    <h3>Fecha</h3>
+                    <h5>30/10/2023</h5>
+                    <div className='reservation-details'>
+                        <h3>Reservado:</h3>
+                        <h5>Todo el día</h5>
+                        <p className="reservaoficina">Nombre de la oficina</p>
+                        <div className='seat-details'>
+                            <h3>Puesto reservado:</h3>
+                            <h5>25</h5>
+                            <div className='form2Buttons'>
+                                <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> </button>
                             </div>
                         </div>
                     </div>
-                ))
-            }
-
-        </>
-    )
-}
+                </div>
+            </div>
+            <div className='card reservation'>
+                <div className='card-body'>
+                    <h3>Fecha</h3>
+                    <h5>30/10/2023</h5>
+                    <div className='reservation-details'>
+                        <h3>Reservado:</h3>
+                        <h5>Todo el día</h5>
+                        <p className="reservaoficina">Nombre de la oficina</p>
+                        <div className='seat-details'>
+                            <h3>Puesto reservado:</h3>
+                            <h5>25</h5>
+                            <div className='form2Buttons'>
+                                <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='card reservation'>
+                <div className='card-body'>
+                    <h3>Fecha</h3>
+                    <h5>30/10/2023</h5>
+                    <div className='reservation-details'>
+                        <h3>Reservado:</h3>
+                        <h5>Todo el día</h5>
+                        <p className="reservaoficina">Nombre de la oficina</p>
+                        <div className='seat-details'>
+                            <h3>Puesto reservado:</h3>
+                            <h5>25</h5>
+                            <div className='form2Buttons'>
+                                <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 export default MisReservas
