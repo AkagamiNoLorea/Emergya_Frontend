@@ -1,0 +1,181 @@
+.applicationForm {
+    background: #0E2240;
+    color: white;
+    padding: 0 5px 15;
+    text-align: center;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom: 5px solid #0E2240;
+    margin-bottom: 5px;
+}
+.card{
+padding: 0.5% 3%;
+text-align: center;
+border-radius: 15px;
+border: 5px solid #0E2240;
+margin: 2% 5%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+.titulopagina{
+    margin:2%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+}
+form {
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 19px;
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    border: solid 5px #0E2240;
+}
+
+/* TAMAÑO LETRA: nombre, apellido, e-mail, etc ----- */
+label {
+    margin-left: 8px;
+    font-size: 25px;
+    padding: 5px;
+    display: block;
+    width: 100%;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 95%;
+    padding: 1%;
+    margin-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-style: italic;
+    font-size: 20px;
+}
+
+input:focus {
+    background-color: #dedede;
+}
+.form2Buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1%;
+    margin: 1%;
+
+}
+
+.formButton {
+width: 50%;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: #0E2240;
+    color: #fff;
+    cursor: pointer;
+    margin:auto;
+    border: none;
+    padding: 1%;
+    border-radius: 20px 10px 20px 10px;
+    /* SOMBRA BOTON*/
+    -webkit-box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 4px 9px 8px -4px rgba(0, 0, 0, 0.75);
+}
+
+.formButton:hover {
+    background-color: #EF3242;
+}
+
+form h3{
+    font-size: 25px;
+    text-align: center;
+    justify-content: center;
+}
+.createButton{
+    display: flex;
+    
+    justify-content: flex-end;
+}
+.createButton button{
+    width: 50%;
+    font-size: large;
+    background-color: #0E2240;
+    color: #fff;
+    cursor: pointer;
+    margin:auto;
+    border: none;
+    padding: 1%;
+    border-radius: 20px 10px 20px 10px;
+}
+.createButton button:hover {
+    background-color: #EF3242;
+}
+.card-buttons {
+    grid-area: buttons;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width:35%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.card-buttons > button {
+    margin: 2%;
+    padding: 0.5%;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: white;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+    padding: 1%;
+    width:10%;
+}
+select{
+	display: inline-block;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+    margin-bottom: 5px;
+    width: 95%;
+    margin-left: 10px;
+}
+.seleccionar{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+    width:20%;
+    margin-left: 5%;
+}
