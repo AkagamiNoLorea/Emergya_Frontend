@@ -1,17 +1,55 @@
-.leyendaBox {
-    border: 2px solid black;
-    width: 20%;
-}
-ul{
+.elegiroficina{
     display: flex;
-    flex-direction: column;
-    margin:5%;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 2%;
+    margin-right: 5%;
 }
+.selector{
+    display: flex;
+    flex-direction: row;
+}
+.seleccionar{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+    width:20%;
+}
+
+.bodyReservas{
+    display: flex;
+    flex-direction: row;
+    margin: 2%;
+    justify-content: space-evenly;
+}
+
+aside{
+    width: 15;
+}
+
+.leyendaBox {
+    border: 2px solid darkgray;
+    margin-top: 10%;
+    padding:3%;
+}
+
 li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
 }
 
 li div {
@@ -21,30 +59,58 @@ li div {
 }
 
 li:nth-child(1) div {
-    background-color: grey;
+    background-color: #D9D9D9;
 }
 
 li:nth-child(2) div {
-    background-color: blue;
+    background-color: #5C85BB;
 }
 
 li:nth-child(3) div {
-    background-color: green;
+    background-color: #9CEF32;
 }
 
 li:nth-child(4) div {
-    background-color: yellow;
+    background-color: #F9E21A;
 }
 
 li:nth-child(5) div {
-    background-color: orange;
+    background-color: #F37C0D;
 }
 
 li:nth-child(6) div {
-    background-color: red;
+    background-color: #EF3242;
 }
 
 li h3 {
     margin: 2%
 }
-
+.listabotones{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-gap:15px;
+    padding:2%;
+    width: 100%;
+}
+.boton{
+    background-color: #D9D9D9;
+    padding:15%;
+    border: 1px solid black;
+    font-size: larger;
+    border-radius: 15px;
+}
+.azul{
+    background-color: #5C85BB;
+}
+.verde{
+    background-color: #9CEF32;
+}
+.amarillo{
+    background-color: #F9E21A;
+}
+.naranja{
+    background-color: #F37C0D;
+}
+.rojo{
+    background-color: #EF3242;
+}

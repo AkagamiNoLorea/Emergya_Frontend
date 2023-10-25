@@ -35,7 +35,7 @@ const ConfirmarReserva = () => {
         </select>
         <div className='form2Buttons'>
           <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>
-          <button className='formButton' type="button" onClick={goBack}><i className="fa-solid fa-xmark"></i></button>
+          <button className='formButton' type="button" onClick={cancelar}><i className="fa-solid fa-xmark"></i></button>
         </div>
       </div>
     </form>

@@ -1,25 +1,12 @@
-import axios from "axios"
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
 import '../estilos/Forms.css'
-
-const url = "http://localhost:8080/api/v1/puesto"
-
+import { useNavigate } from "react-router-dom"
 const CrearPuesto = () => {
-
-    const [idOficina, setIdOficina,] = useState('')
-    const [numero, setNumero] = useState('')
-    const [disponible, setDisponible] = useState('')
-    const [idEstado, setEstado] = useState('')
     const navigate = useNavigate()
-
-    const guardar = async (e) => {
-        e.preventDefault()
-        await axios.post(url, { numero: numero, disponible: disponible, idEstado: idEstado, idOficina: idOficina })
-        navigate("/private/listaoficinas")
+    const guardar = async () => {
+        navigate("/private/editarpuestos")
     }
     const goBack = () => {
-        navigate("/private/listaoficinas");
+        navigate("/private/editarpuestos");
     }
     return (
         <>
@@ -30,20 +17,23 @@ const CrearPuesto = () => {
                 <div className="contenedor-form">
                     <div className="formTable">
                         <div>
-                            <label>Nombre de la oficina:</label>
-                            <input type="text" value={nombreoficina} onChange={(e) => setNombreoficina(e.target.value)} />
+                            <label>Selecciona oficina:</label>
+                            <select>
+                    <option value=""> Selecciona oficina:</option>
+                    <option value="Turno de mañana">Capitolio-Proxya-Principal</option>
+                    <option value="Turno de tarde">Emergya-Edificio-Forum</option>
+                </select>
                         </div>
                         <div>
                             <label>Numero de puesto:</label>
-                            <input type="text" value={puesto} onChange={(e) => setPuesto(e.target.value)} />
+                            <input type="text" value="" />
                         </div>
                         <div>
-                            <label>Plano de distribución:</label>
-                            <input type="text" value={planodistribucion} onChange={(e) => setPlanodistribucion(e.target.value)} />
-                        </div>
-                        <div>
-                            <label>Días de antelación máxima:</label>
-                            <input type="text" value={diasantelacion} onChange={(e) => setDiasantelacion(e.target.value)}></input>
+                            <label>Disponibilidad:</label>
+                            <select>
+                            <option value="false">No disponible</option>
+                            <option value="true">disponible</option>
+                        </select>
                         </div>
                         <div className='form2Buttons'>
                             <button className='formButton' type="submit"><i className="fa-regular fa-floppy-disk"></i></button>

@@ -12,8 +12,13 @@ const Navbar = () => {
       <div className="navbar">
         <img src={logo}></img>
         <div className="pestanyas">
-          <div className="usuario">
-            <a href="usuario">Usuarios</a>
+        <div className="dropdown">
+            <button className="dropbtn">Usuario <i className="fa fa-caret-down"></i>
+            </button>
+            <div className="dropdown-content">
+              <NavLink to="/misreservas">Mis reservas</NavLink>
+              <NavLink to="/">Crear reserva</NavLink>
+            </div>
           </div>
           <div className="dropdown">
             <button className="dropbtn">Administrador <i className="fa fa-caret-down"></i>
