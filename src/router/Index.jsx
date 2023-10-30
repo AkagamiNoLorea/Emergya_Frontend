@@ -1,17 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import ListaUsuarios from "../pages/ListaUsuarios";
-import CrearUsuario from "../pages/CrearUsuario";
-import EditarUsuario from "../pages/EditarUsuario";
-import BorrarUsuario from "../pages/BorrarUsuario";
-import ListaOficinas from "../pages/ListaOficinas";
-import CrearOficinas from "../pages/CrearOficinas";
-import EditarOficinas from "../pages/EditarOficinas";
-import BorrarOficinas from "../pages/BorrarOficinas";
-import EditListaPuestos from "../pages/EditListaPuestos";
+import ListaUsuarios from "../components/usuario/ListaUsuarios";
+import CrearUsuario from "../components/usuario/CrearUsuario";
+import EditarUsuario from "../components/usuario/EditarUsuario";
+import ListaOficinas from "../components/oficinas/ListaOficinas";
+import CrearOficinas from "../components/oficinas/CrearOficina";
+import EditarOficinas from "../components/oficinas/EditarOficina";
+import BorrarOficinas from "../components/oficinas/BorrarOficina";
+import CrearPuesto from "../components/puestos/CrearPuesto";
+import EditListaPuestos from "../components/puestos/EditListaPuestos";
 import CrearReserva from "../components/reservas/CrearReserva";
+import ConfirmarReserva from "../components/reservas/ConfirmarReserva";
 import BorrarReserva from "../components/reservas/BorrarReserva";
 import MisReservas from "../components/reservas/MisReservas";
+import Layout from "../layout/Layout";
 
 export const router = createBrowserRouter([
     {
@@ -23,8 +24,12 @@ export const router = createBrowserRouter([
                 element: <CrearReserva />
             },
             {
-                path: "/misreservas/:userId",
+                path: "/misreservas",
                 element: <MisReservas />
+            },
+            {
+                path: "/confirmarreserva",
+                element: <ConfirmarReserva />
             },
             {
                 path: "/borrarreserva/:reservaId",
@@ -39,12 +44,8 @@ export const router = createBrowserRouter([
                 element: <CrearUsuario />
             },
             {
-                path: "/private/editaruser/:userId",
+                path: "/private/editaruser/:id",
                 element: <EditarUsuario />
-            },
-            {
-                path: "/private/borraruser/:userId",
-                element: <BorrarUsuario />
             },
             {
                 path: "/private/listaoficinas",
@@ -63,11 +64,11 @@ export const router = createBrowserRouter([
                 element: <BorrarOficinas />
             },
             {
-                path: "/private/borraroficinas/:oficinaId",
-                element: <ElegirOficina />
+                path: "/private/crearpuesto",
+                element: <CrearPuesto />
             },
             {
-                path: "/private/editarpuestos/:oficinaId",
+                path: "/private/editarpuestos",
                 element: <EditListaPuestos />
             }            
         ]
